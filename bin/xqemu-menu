@@ -1,0 +1,8 @@
+#!/bin/bash
+
+/home/qemu/bin/ncmenu " QEMU " `ls /home/qemu/engines/*.sh | sed "s~.*/\(.*\).sh~\1~g"`
+
+i=`cat ncm-tmp`
+rm ncm-tmp
+
+/home/qemu/bin/xqemu-dp $i

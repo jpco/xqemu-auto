@@ -1,0 +1,4 @@
+#!/bin/bash
+
+servercfg=$(/home/qemu/bin/sx-test | sed "s/\(.*\)--\(.*\)$/\2/g")
+xinit "$1" -- $servercfg

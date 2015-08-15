@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ -z $1 ]]; then exit 0; fi
+
+i=0
+for cmd in `ls /home/qemu/engines/*.sh`; do
+	let i=i+1
+	if [[ $i -eq $1 ]]; then
+		got=yes
+		/home/qemu/bin/xqemu $cmd
+	fi
+done
+
+clear
+
+if [[ $1 -ne 0 ]]; then
+	/home/qemu/bin/xqemu-menu
+fi

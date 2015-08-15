@@ -1,0 +1,6 @@
+#!/bin/bash
+
+devdir="/sys/class/power_supply/BAT0"
+perc="$(cat $devdir/capacity)"
+echo "$perc% "
+
